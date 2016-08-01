@@ -13,9 +13,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Trips | Travel Booking Site Template</title>
+    <title>WAZOO | All you need for a perfect holiday...</title>
 
     <!-- Favicons -->
+    <script src="https://use.fontawesome.com/47b573b621.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/ionicons.css">
+    <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
@@ -62,9 +65,7 @@
                     </li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-globe"></i> ENGLISH</a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Turkish</a></li>
-                            <li><a href="#">Arabic</a></li>
-                            <li><a href="#">Russian</a></li>
+                            <li><a href="#">English</a></li>
                             <li><a href="#">French</a></li>
                         </ul>
                     </li>
@@ -85,107 +86,9 @@
         </div><!-- end container -->
     </div><!-- end topbar -->
 
-    <header class="header fixedheader nobg">
-        <div class="menu-container">
-            <div class="container">
-                <div class="menu-wrapper">
-                    <nav id="navigation" class="navbar" role="navigation">
-                        <div class="navbar-inner">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <i class="icon-menu27"></i>
-                                </button>
-                                <a id="brand" class="clearfix navbar-brand" href="index-2.php"><img src="images/wlogo.png" alt="Trips"></a>
-                            </div><!-- end navbar-header -->
-                            <div id="navbar-collapse" class="navbar-right navbar-collapse collapse clearfix">
-                                <ul class="nav navbar-nav yamm">
-                                    <li class="dropdown">
-                                        <a href="#" class="active dropdown-toggle" data-toggle="dropdown">HOME</a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <div class="yamm-content">
-                                                    <div class="row">
-                                                        <article class="col-md-6">
-                                                            <ul>
-                                                                <li><h3>HOME PAGES</h3></li>
-                                                                <li><a href="index-2.php">Home Default</a></li>
-                                                                <li><a href="index1.php">Home Version 1</a></li>
-                                                                <li><a href="index2.php">Home Version 2</a></li>
-                                                                <li><a href="index3.php">Home Version 3</a></li>
-                                                                <li><a href="index4.php">Home Version 4</a></li>
-                                                                <li><a href="index5.php">Home Version 5</a></li>
-                                                            </ul>
-                                                        </article>
-                                                        <article class="col-md-6">
-                                                            <ul>
-                                                                <li><h3>CUSTOM PAGES</h3></li>
-                                                                <li><a href="hotels.php">Hotels</a></li>
-                                                                <li><a href="hotel-single.php">Hotels Single</a></li>
-                                                                <li><a href="destination-list.php">Destination List</a></li>
-                                                                <li><a href="destination-grid.php">Destination Grid</a></li>
-                                                                <li><a href="payment.php">Payment Details</a></li>
-                                                                <li><a href="successful.php">Successful</a></li>
-                                                            </ul>
-                                                        </article>
-                                                    </div><!-- end row -->
-                                                </div><!-- end yamm-content -->
-                                            </li>
-                                        </ul><!-- end dropdown-menu -->
-                                    </li><!-- end yamm-fw -->
-                                    <li><a href="hotels.php">HOTELS</a></li>
-                                    <li><a href="hot-deals.php">HOT DEALS</a></li>
-                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">PAGES</a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="coming-soon.php">Coming Soon</a></li>
-                                            <li><a href="page-login.php">Page Login</a></li>
-                                            <li><a href="page-not-found.php">Page Not Found</a></li>
-                                            <li><a href="page-sidebar.php">Page Sidebar</a></li>
-                                            <li><a href="page-fullwidth.php">Page Fullwidth</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">BLOG</a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="blog.php">Blog Default</a></li>
-                                            <li><a href="blog-sidebar.php">Blog Sidebar</a></li>
-                                            <li><a href="blog-single.php">Blog Single</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">BONUS</a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="shortcodes-columns.php">Columns</a></li>
-                                            <li><a href="shortcodes-typography.php">Typography</a></li>
-                                            <li><a href="shortcodes-buttons.php">Button</a></li>
-                                            <li><a href="shortcodes-pricing-table.php">Pricing Table</a></li>
-                                            <li><a href="shortcodes-chart.php">Chart</a></li>
-                                            <li><a href="shortcodes-accordion.php">Accordion</a></li>
-                                            <li><a href="shortcodes-list.php">List Styles</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.php">CONTACT</a></li>
-                                    <li class="sidebar-dropper"><a data-toggle="sidebar" data-target=".sidebar-right" class="noborder" href="#"><i class="icon-menu27"></i></a></li>
-                                </ul><!-- end navbar-right -->
-                            </div><!-- end navbar-callopse -->
-                        </div><!-- end navbar-inner -->
-                    </nav><!-- end navigation -->
-                </div><!-- menu wrapper -->
-            </div><!-- end container -->
-        </div><!-- end menu-container -->
-        <div class="sidebar-menu-container">
-            <div class="col-sm-2 col-md-2 sidebar sidebar-right sidebar-animate">
-                <a data-toggle="sidebar" data-target=".sidebar-right" class="text-right" href="#"><i class="icon-wrong6-1"></i></a>
-                <img src="images/logo.png" alt="Trips">
-                <ul class="nav navbar-stacked">
-                    <li><a href="index-2.php">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                    <li><a href="#">Forums</a></li>
-                    <li><a href="page-sidebar.php">Terms Usage</a></li>
-                    <li><a href="blog.php">News / Blog</a></li>
-                </ul>
-            </div>
-        </div><!-- end sidebar menu -->
-    </header><!-- end header -->
+    <!--Header goes here-->
+        <?php include"header.php"; ?>
+    <!--End of Header-->
 
     <section class="section fullscreen background parallax" style="background-image:url('upload/parallax_04.jpg');" data-img-width="1920" data-img-height="1133" data-diff="100">
         <div class="container">
@@ -195,53 +98,56 @@
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="active"><a href="#tab_01" aria-controls="tab_01" role="tab" data-toggle="tab"><i class="icon-hotel68"></i></a></li>
-                            <li><a href="#tab_02" aria-controls="tab_02" role="tab" data-toggle="tab"><i class="icon-airplane70"></i></a></li>
+                            <li><a href="#tab_02" aria-controls="tab_02" role="tab" data-toggle="tab"><i class="icon-bus7"></i></a></li>
                             <li><a href="#tab_03" aria-controls="tab_03" role="tab" data-toggle="tab"><i class="icon-sedan3"></i></a></li>
-                            <li><a href="#tab_04" aria-controls="tab_04" role="tab" data-toggle="tab"><i class="icon-location38"></i></a></li>
-                            <li><a href="#tab_05" aria-controls="tab_05" role="tab" data-toggle="tab"><i class="icon-bicycle12"></i></a></li>
+                            <li><a href="#tab_04" aria-controls="tab_04" role="tab" data-toggle="tab"><i class="icon-earth72"></i></a></li>
+                            <li><a href="#tab_05" aria-controls="tab_05" role="tab" data-toggle="tab"><i class="ion-android-restaurant"></i></a></li>
+                            <li><a href="#tab_06" aria-controls="tab_06" role="tab" data-toggle="tab"><i class="icon-basket"></i></a></li>
                         </ul>
 
                         <div class="tab-content">
+
                             <div role="tabpanel" class="tab-pane active" id="tab_01">
-                                <h6>WHERE WOULD YOU LIKE TO GO?</h6>
+                                <h6>Hotel Service</h6>
                                 <form class="bookform form-inline row">
-                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Destination: Country, City,Airport,...">
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12" style="margin-bottom: 5%">
+                                        <div class="dropdown">
+                                            <select class="selectpicker" data-style="btn-white">
+                                                <option>WHERE WOULD YOU LIKE TO GO?</option>
+                                                <option value="douala">Douala</option>
+                                                <option value="buea">Buea</option>
+                                                <option value="baffoussam">Baffoussam</option>
+                                                <option value="yaounde">Yaounde</option>
+                                                <option value="bamenda">Bamenda</option>
+                                                <option value="limbe">Limbe</option>
+                                                <option value="kribi">Kribi</option>
+                                            </select>
+                                        </div>  
                                     </div>
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Check in" id="datepicker">
+                                            <input type="text" class="form-control" placeholder="Check-in Date" id="datepicker2">
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Check out" id="datepicker1">
+                                            <input type="text" class="form-control" placeholder="Check-out Date" id="datepicker3">
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
+
                                     <div class="form-group make-margin col-md-6 col-sm-6 col-xs-12">
                                         <div class="dropdown">
                                             <select class="selectpicker" data-style="btn-white">
-                                                <option>Adults</option>
-                                                <option>2+1 with Bedroom + 2 Child</option>
-                                                <option>1+1 with Bedroom + 1 Child</option>
-                                                <option>2+1 with Bedroom + Full</option>
-                                                <option>Full Services 15 Days</option>
+                                                <option>Budget Range</option>
+                                                <option>0 - 10,000 XAF ($20)</option>
+                                                <option>0 - $50,000 XAF ($100)</option>
+                                                <option>0 - $100,000 XAF ($200)</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form-group make-margin col-md-6 col-sm-6 col-xs-12">
-                                        <div class="dropdown">
-                                            <select class="selectpicker" data-style="btn-white">
-                                                <option>Max Budget</option>
-                                                <option>0 - $1000</option>
-                                                <option>0 - $2000</option>
-                                                <option>0 - $3000</option>
-                                                <option>0 - $5000</option>
-                                            </select>
-                                        </div>
-                                    </div>
+
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
                                         <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> BOOK NOW</button>
                                     </div>
@@ -249,102 +155,163 @@
                             </div><!-- end tab-pane -->
 
                             <div role="tabpanel" class="tab-pane" id="tab_02">
-                                <h6>WHEN WOULD YOU LIKE TO GO?</h6>
+                                <h6>BUS Service</h6>
                                 <form class="bookform form-inline row">
-                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Destination: Country, City,Airport...">
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                        <div class="dropdown">
+                                            <select class="selectpicker" data-style="btn-white">
+                                                <option>WHERE ARE YOU?</option>
+                                                <option value="douala">Douala</option>
+                                                <option value="buea">Buea</option>
+                                                <option value="baffoussam">Baffoussam</option>
+                                                <option value="yaounde">Yaounde</option>
+                                                <option value="bamenda">Bamenda</option>
+                                                <option value="limbe">Limbe</option>
+                                                <option value="kribi">Kribi</option>
+                                            </select>
+                                        </div>                                        
                                     </div>
-                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Hotel: TUNAI, HAWAI...">
+                                    <div class="form-group make-margin col-md-12 col-sm-12 col-xs-12">
+                                       <!-- <input type="text" class="form-control" placeholder=" Destination: Region, Town..."> -->
+                                        <div class="dropdown">
+                                            <select class="selectpicker" data-style="btn-white">
+                                                <option>WHERE WOULD YOU LIKE TO GO?</option>
+                                                <option value="douala">Douala</option>
+                                                <option value="buea">Buea</option>
+                                                <option value="baffoussam">Baffoussam</option>
+                                                <option value="yaounde">Yaounde</option>
+                                                <option value="bamenda">Bamenda</option>
+                                                <option value="limbe">Limbe</option>
+                                                <option value="kribi">Kribi</option>
+                                            </select>
+                                        </div>                                        
                                     </div>
-                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Time: May, Jun, Jully...">
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-12" style="margin-bottom: 6%;">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Departure Date" id="datepicker">
+                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                        </div>
                                     </div>
-
+                                    <!--
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Check out" id="datepicker1">
+                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                    -->
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> BOOK NOW</button>
+                                        <button type="submit" class="btn btn-primary btn-block">Ready? Go<i class="icon-search"></i></button>
                                     </div>
                                 </form>
                             </div><!-- end tab-pane -->
 
                             <div role="tabpanel" class="tab-pane" id="tab_03">
-                                <h6>WHICH WOULD YOU LIKE TO GO?</h6>
+                                <h6>Car Rental</h6>
                                 <form class="bookform form-inline row">
-                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Destination: Country, City,Airport,...">
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 5%;">
+                                        <div class="dropdown">
+                                            <select class="selectpicker" data-style="btn-white">
+                                                <option disabled selected>Select a city?</option>
+                                                <option value="douala">Douala</option>
+                                                <option value="buea">Buea</option>
+                                                <option value="baffoussam">Baffoussam</option>
+                                                <option value="yaounde">Yaounde</option>
+                                                <option value="bamenda">Bamenda</option>
+                                                <option value="limbe">Limbe</option>
+                                                <option value="kribi">Kribi</option>
+                                            </select>
+                                        </div>                                        
                                     </div>
+                                
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Check in" id="datepicker2">
+                                            <input type="text" class="form-control" placeholder="From date" id="datepicker">
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Check out" id="datepicker3">
+                                            <input type="text" class="form-control" placeholder="To date" id="datepicker">
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
                                     <div class="form-group make-margin col-md-6 col-sm-6 col-xs-12">
                                         <div class="dropdown">
                                             <select class="selectpicker" data-style="btn-white">
-                                                <option>Adults</option>
-                                                <option>2+1 with Bedroom + 2 Child</option>
-                                                <option>1+1 with Bedroom + 1 Child</option>
-                                                <option>2+1 with Bedroom + Full</option>
-                                                <option>Full Services 15 Days</option>
+                                                <option disabled selected>Vehicle Type</option>
+                                                <option>Toyota</option>
+                                                <option>Mercedes</option>
+                                                <option>Isuzu</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form-group make-margin col-md-6 col-sm-6 col-xs-12">
-                                        <div class="dropdown">
-                                            <select class="selectpicker" data-style="btn-white">
-                                                <option>Max Budget</option>
-                                                <option>0 - $1000</option>
-                                                <option>0 - $2000</option>
-                                                <option>0 - $3000</option>
-                                                <option>0 - $5000</option>
-                                            </select>
-                                        </div>
-                                    </div>
+
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> BOOK NOW</button>
+                                        <button type="submit" class="btn btn-primary btn-block">Search<i class="icon-search"></i></button>
                                     </div>
                                 </form>
                             </div><!-- end tab-pane -->
 
                             <div role="tabpanel" class="tab-pane" id="tab_04">
-                                <h6>HOW WOULD YOU LIKE TO GO?</h6>
+                                <h6>Touristic Tour</h6>
                                 <form class="bookform form-inline row">
-                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Destination: Country, City,Airport...">
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12 make-margin">
+                                        <select class="selectpicker" data-style="btn-white">
+                                                <option disabled selected>Select a city?</option>
+                                                <option value="douala">Douala</option>
+                                                <option value="buea">Buea</option>
+                                                <option value="baffoussam">Baffoussam</option>
+                                                <option value="yaounde">Yaounde</option>
+                                                <option value="bamenda">Bamenda</option>
+                                                <option value="limbe">Limbe</option>
+                                                <option value="kribi">Kribi</option>
+                                            </select>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Hotel: TUNAI, HAWAI...">
-                                    </div>
-                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Time: May, Jun, Jully...">
-                                    </div>
-                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> BOOK NOW</button>
+                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> Take a Tour</button>
                                     </div>
                                 </form>
                             </div><!-- end tab-pane -->
 
                             <div role="tabpanel" class="tab-pane" id="tab_05">
-                                <h6>REALLY? YOU LIKE TO GO?</h6>
+                                <h6>Restaurant</h6>
                                 <form class="bookform form-inline row">
-                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Destination: Country, City,Airport...">
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12 make-margin">
+                                        <select class="selectpicker" data-style="btn-white">
+                                                <option disabled selected>Select a city?</option>
+                                                <option value="douala">Douala</option>
+                                                <option value="buea">Buea</option>
+                                                <option value="baffoussam">Baffoussam</option>
+                                                <option value="yaounde">Yaounde</option>
+                                                <option value="bamenda">Bamenda</option>
+                                                <option value="limbe">Limbe</option>
+                                                <option value="kribi">Kribi</option>
+                                            </select>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Hotel: TUNAI, HAWAI...">
+                                        <button type="submit" class="btn btn-primary btn-block">Food Is Ready<i class="icon-search"></i></button>
+                                    </div>
+                                </form>
+                            </div><!-- end tab-pane -->
+
+                            <div role="tabpanel" class="tab-pane" id="tab_06">
+                                <h6>Buy an article</h6>
+                                <form class="bookform form-inline row">
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12 make-margin">
+                                        <select class="selectpicker" data-style="btn-white">
+                                                <option disabled selected>Select a category?</option>
+                                                <option value="douala">Electronics</option>
+                                                <option value="buea">Furniture</option>
+                                                <option value="baffoussam">Men Cloths</option>
+                                                <option value="yaounde">Women Cloths</option>
+                                                <option value="bamenda">Baby Cloths</option>
+                                                <option value="limbe">Accessories</option>
+                                                <option value="kribi">Shoes</option>
+                                            </select>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder=" Time: May, Jun, Jully...">
-                                    </div>
-                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> BOOK NOW</button>
+                                        <button type="submit" class="btn btn-primary btn-block">Search<i class="icon-search"></i></button>
                                     </div>
                                 </form>
                             </div><!-- end tab-pane -->
@@ -913,69 +880,9 @@
         <div id="map"></div>
     </article><!-- end section -->
 
-    <footer class="footer clearfix">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2 col-sm-6 col-xs-12 text-center">
-                    <div class="flogo">
-                        <img src="images/flogo.png" alt="">
-                    </div><!-- end logo -->
-                </div><!-- end col -->
-                <div class="col-md-5 col-sm-6 col-xs-12">
-                    <div class="widget">
-                        <div class="widget-title">
-                            <h3>ABOUT</h3>
-                        </div><!-- end title -->
-                        <div class="textwidget">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut dignissimos ea est, impedit incidunt, laboriosam maxime molestias numquam odio officiis, possimus quo rem. </p>
-                            <p>Ab aut dignissimos ea est, impedit incidunt, laboriosam maxime molestias numquam odio officiis.</p>
-                        </div><!-- end textwidget -->
-                    </div><!-- end widget -->
-                </div><!-- end col -->
-                <div class="col-md-5 col-sm-6 col-xs-12">
-                    <div class="widget">
-                        <div class="widget-title">
-                            <h3>NEWSLETTER</h3>
-                        </div><!-- end title -->
-                        <div class="newsletterwidget">
-                            <p>Subscribe to our newsletter to receive news & updates. We promise not spamming you, super promise! </p>
-                            <form id="newsletter" class="form-inline">
-                                <div class="form-group">
-                                    <input type="text" class="form-control border-radius" placeholder="Your email here">
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg border-radius">Send</button>
-                            </form>
-                        </div><!-- end newsletter widget -->
-                    </div><!-- end widget -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </footer><!-- end copyrights -->
-
-    <div class="copyrights clearfix">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-left">
-                    <p>COPYRIGHT TRENDING TEMPLATES 2015. ALL RIGHT RESERVED</p>
-                </div><!-- end col -->
-
-                <div class="col-md-6 text-right">
-                    <div class="social-footer">
-                        <a href="#" title="Facebook"><i class="icon-facebook"></i></a>
-                        <a href="#" title="Twitter"><i class="icon-twitter"></i></a>
-                        <a href="#" title="Pinterest"><i class="icon-pinterest"></i></a>
-                        <a href="#" title="SU.PR"><i class="icon-stumbleupon"></i></a>
-                        <a href="#" title="Instagram"><i class="icon-instagrem"></i></a>
-                        <a href="#" title="Dribbble"><i class="icon-dribbble"></i></a>
-                        <a href="#" title="Vimeo"><i class="icon-vimeo"></i></a>
-                        <a href="#" title="Tumblr"><i class="icon-tumblr"></i></a>
-                        <a href="#" title="RSS"><i class="icon-rss"></i></a>
-                    </div><!-- end social-footer -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end copyrights -->
-</div><!-- end wrapper -->
+    <!--Footer goes here-->
+    <?php include"footer1.php"; ?>
+    <!--End of Footer-->
 
     <!-- Template core JavaScript's
     ================================================== -->

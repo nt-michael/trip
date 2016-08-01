@@ -175,7 +175,7 @@
                                 <h1>404</h1>
                                 <h2>OOPS! - PAGE NOT FOUND</h2>
                                 <p>We’re really sorry! Something went wrong trying to display the page, Please try one of these instead</p>
-                                <a href="#" class="btn btn-primary btn-normal btn-lg">BACK TO HOMEPAGE</a>
+                                <a href="index.php" class="btn btn-primary btn-normal btn-lg">BACK TO HOMEPAGE</a>
                             </div><!-- end post-wrapper -->
                         </div><!-- end col -->
                     </div><!-- end row -->

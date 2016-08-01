@@ -1438,3 +1438,5 @@
 .icon-previous11:before {
   content: "\e174";
 }
+
+.icon-cutlery:before { content: "\f3aa"; }
