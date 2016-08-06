@@ -9,12 +9,12 @@
                                     <span class="sr-only">Toggle navigation</span>
                                     <i class="icon-menu27"></i>
                                 </button>
-                                <a id="brand" class="clearfix navbar-brand" href="index-2.php"><img src="images/logo.png" alt="Trips"></a>
+                                <a id="brand" class="clearfix navbar-brand" href="/"><img src="images/logo.png" alt="Trips"></a>
                             </div><!-- end navbar-header -->
                             <div id="navbar-collapse" class="navbar-right navbar-collapse collapse clearfix">
                                 <ul class="nav navbar-nav yamm">
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">HOME</a>
+                                        <a href="/" class="dropdown-toggle" data-toggle="dropdown">HOME</a>
                                         <ul class="dropdown-menu">
                                             <li>
                                                 <div class="yamm-content">
@@ -33,7 +33,7 @@
                                                         <article class="col-md-6">
                                                             <ul>
                                                                 <li><h3>CUSTOM PAGES</h3></li>
-                                                                <li><a href="hotels.php">Hotels</a></li>
+                                                                <li><a href="hotel-list.php">Hotels</a></li>
                                                                 <li><a href="hotel-single.php">Hotels Single</a></li>
                                                                 <li><a href="destination-list.php">Destination List</a></li>
                                                                 <li><a href="destination-grid.php">Destination Grid</a></li>
@@ -46,7 +46,7 @@
                                             </li>
                                         </ul><!-- end dropdown-menu -->
                                     </li><!-- end yamm-fw -->
-                                    <li><a href="hotels.php">HOTELS</a></li>
+                                    <li><a href="hotel-list.php">HOTELS</a></li>
                                     <li><a href="hot-deals.php">HOT DEALS</a></li>
                                     <li class="dropdown"><a href="#" class="active dropdown-toggle" data-toggle="dropdown">PAGES</a>
                                         <ul class="dropdown-menu" role="menu">

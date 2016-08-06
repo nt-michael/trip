@@ -109,11 +109,11 @@
 
                             <div role="tabpanel" class="tab-pane active" id="tab_01">
                                 <h6>Hotel Service</h6>
-                                <form class="bookform form-inline row">
+                                <form class="bookform form-inline row" action="hotels.php" method="POST">
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12" style="margin-bottom: 5%">
                                         <div class="dropdown">
-                                            <select class="selectpicker" data-style="btn-white">
-                                                <option>WHERE WOULD YOU LIKE TO GO?</option>
+                                            <select class="selectpicker" data-style="btn-white" name="go">
+                                                <option>Select a City or Region</option>
                                                 <option value="douala">Douala</option>
                                                 <option value="buea">Buea</option>
                                                 <option value="baffoussam">Baffoussam</option>
@@ -124,42 +124,42 @@
                                             </select>
                                         </div>  
                                     </div>
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Check-in Date" id="datepicker2">
-                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                            <input type="date" class="form-control" name="in_date" required>
+                                            <div class="input-group-addon"><strong>Check-In Date</strong>....&nbsp;<i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12 make-margin">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Check-out Date" id="datepicker3">
-                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                            <input type="date" class="form-control" id="" name="out_date" required>
+                                            <div class="input-group-addon"><strong>Check-Out Date</strong>&nbsp;<i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
 
-                                    <div class="form-group make-margin col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-12" style="margin-bottom: 4%">
                                         <div class="dropdown">
-                                            <select class="selectpicker" data-style="btn-white">
+                                            <select class="selectpicker" data-style="btn-white" name="budget" required>
                                                 <option>Budget Range</option>
-                                                <option>0 - 10,000 XAF ($20)</option>
-                                                <option>0 - $50,000 XAF ($100)</option>
-                                                <option>0 - $100,000 XAF ($200)</option>
+                                                <option value="10000">0 - 10,000 XAF ($20)</option>
+                                                <option value="50000">0 - 50,000 XAF ($100)</option>
+                                                <option value="100000">0 - 100,000 XAF ($200)</option>
                                             </select>
                                         </div>
                                     </div>
 
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> BOOK NOW</button>
+                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> Find Hotels</button>
                                     </div>
                                 </form>
                             </div><!-- end tab-pane -->
 
                             <div role="tabpanel" class="tab-pane" id="tab_02">
                                 <h6>BUS Service</h6>
-                                <form class="bookform form-inline row">
+                                <form class="bookform form-inline row" action="bus-list.php" method="POST">
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <div class="dropdown">
-                                            <select class="selectpicker" data-style="btn-white">
+                                            <select class="selectpicker" data-style="btn-white" name="from">
                                                 <option>WHERE ARE YOU?</option>
                                                 <option value="douala">Douala</option>
                                                 <option value="buea">Buea</option>
@@ -174,7 +174,7 @@
                                     <div class="form-group make-margin col-md-12 col-sm-12 col-xs-12">
                                        <!-- <input type="text" class="form-control" placeholder=" Destination: Region, Town..."> -->
                                         <div class="dropdown">
-                                            <select class="selectpicker" data-style="btn-white">
+                                            <select class="selectpicker" data-style="btn-white" name="to">
                                                 <option>WHERE WOULD YOU LIKE TO GO?</option>
                                                 <option value="douala">Douala</option>
                                                 <option value="buea">Buea</option>
@@ -188,18 +188,10 @@
                                     </div>
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12" style="margin-bottom: 6%;">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Departure Date" id="datepicker">
+                                            <input type="date" class="form-control" placeholder="Departure Date" id="" name="date">
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
-                                    <!--
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Check out" id="datepicker1">
-                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                        </div>
-                                    </div>
-                                    -->
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
                                         <button type="submit" class="btn btn-primary btn-block">Ready? Go<i class="icon-search"></i></button>
                                     </div>
@@ -208,10 +200,10 @@
 
                             <div role="tabpanel" class="tab-pane" id="tab_03">
                                 <h6>Car Rental</h6>
-                                <form class="bookform form-inline row">
-                                    <div class="form-group col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 5%;">
+                                <form class="bookform form-inline row" action="car-list.php" method="POST">
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 5%;" >
                                         <div class="dropdown">
-                                            <select class="selectpicker" data-style="btn-white">
+                                            <select class="selectpicker" data-style="btn-white" name="city">
                                                 <option disabled selected>Select a city?</option>
                                                 <option value="douala">Douala</option>
                                                 <option value="buea">Buea</option>
@@ -224,28 +216,35 @@
                                         </div>                                        
                                     </div>
                                 
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="From date" id="datepicker">
-                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                            <input type="date" name="in" class="form-control" placeholder="From date" id="">
+                                            <div class="input-group-addon"><strong>From Date</strong>&nbsp;<i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12 make-margin">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="To date" id="datepicker">
-                                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                            <input type="date" name="out" class="form-control" placeholder="To date" id="">
+                                            <div class="input-group-addon"><strong>To Date</strong>&nbsp;<i class="fa fa-calendar"></i></div>
                                         </div>
                                     </div>
-                                    <div class="form-group make-margin col-md-6 col-sm-6 col-xs-12">
+                                    <!--
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-12" style="margin-bottom: 4%">
                                         <div class="dropdown">
-                                            <select class="selectpicker" data-style="btn-white">
+                                            <select class="selectpicker" data-style="btn-white" name="mark">
                                                 <option disabled selected>Vehicle Type</option>
-                                                <option>Toyota</option>
-                                                <option>Mercedes</option>
-                                                <option>Isuzu</option>
+                                                <option value="toyota">Toyota</option>
+                                                <option value="mercedes">Mercedes</option>
+                                                <option value="chrysler">Chrysler</option>
+                                                <option value="audi">Audi</option>
+                                                <option value="chevrolet">Chevrolet</option>
+                                                <option value="nissan">Nissan</option>
+                                                <option value="lezus">Lezus</option>
+                                                <option value="bmw">BMW</option>
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> 
+                                    -->
 
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
                                         <button type="submit" class="btn btn-primary btn-block">Search<i class="icon-search"></i></button>
@@ -255,9 +254,9 @@
 
                             <div role="tabpanel" class="tab-pane" id="tab_04">
                                 <h6>Touristic Tour</h6>
-                                <form class="bookform form-inline row">
+                                <form class="bookform form-inline row" method="POST" action="dest_list.php">
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12 make-margin">
-                                        <select class="selectpicker" data-style="btn-white">
+                                        <select class="selectpicker" data-style="btn-white" name="tour">
                                                 <option disabled selected>Select a city?</option>
                                                 <option value="douala">Douala</option>
                                                 <option value="buea">Buea</option>
@@ -276,9 +275,9 @@
 
                             <div role="tabpanel" class="tab-pane" id="tab_05">
                                 <h6>Restaurant</h6>
-                                <form class="bookform form-inline row">
+                                <form class="bookform form-inline row" method="POST" action="rest.php">
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12 make-margin">
-                                        <select class="selectpicker" data-style="btn-white">
+                                        <select class="selectpicker" data-style="btn-white" name="go">
                                                 <option disabled selected>Select a city?</option>
                                                 <option value="douala">Douala</option>
                                                 <option value="buea">Buea</option>
@@ -290,14 +289,14 @@
                                             </select>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <button type="submit" class="btn btn-primary btn-block">Food Is Ready<i class="icon-search"></i></button>
+                                        <button type="submit" class="btn btn-primary btn-block">Look-Up<i class="icon-search"></i></button>
                                     </div>
                                 </form>
                             </div><!-- end tab-pane -->
 
                             <div role="tabpanel" class="tab-pane" id="tab_06">
                                 <h6>Buy an article</h6>
-                                <form class="bookform form-inline row">
+                                <form class="bookform form-inline row" action="destination-grid.php" method="POST">
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12 make-margin">
                                         <select class="selectpicker" data-style="btn-white">
                                                 <option disabled selected>Select a category?</option>
@@ -590,7 +589,7 @@
 
                     <div class="service-style row">
                         <div class="icon-container border-radius col-md-3 col-sm-3 col-xs-3">
-                            <i class="icon-airplane51"></i>
+                            <i class="icon-bus7"></i>
                         </div>
                         <div class="col-md-10 col-xs-10 col-sm-10">
                         <h5>BOOK CHEAP FLIGHTS ONLINE</h5>
@@ -613,7 +612,7 @@
                             <i class="icon-location38"></i>
                         </div>
                         <div class="col-md-10 col-xs-10 col-sm-10">
-                        <h5>TOUR GUIDE & PRIVATE GUIDED TOURS</h5>
+                        <h5>TOUR GUIDE &amp; PRIVATE GUIDED TOURS</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut dignissimos ea est, impedit incidunt, laboriosam maxime molestias numquam odio officiis. Ab aut dignissimos ea est, impedit incidunt.</p>
                         </div>
                     </div><!-- end service -->

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -13,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Trips | Travel Booking Site Template</title>
+    <title>WAZOO | Hotel booking service</title>
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
@@ -56,10 +59,10 @@
             <div class="row">
                 <div class="col-sm-12">
                     <ul class="c1 breadcrumb text-left">
-                        <li><a href="#">Pages</a></li>
+                        <li><a href="/">Home</a></li>
                         <li>Hotels</li>
                     </ul>
-                    <h3>Hotels</h3>
+                    <h3>Hotel Listing</h3>
                 </div>
             </div><!-- end row -->
         </div><!-- end container -->
@@ -72,259 +75,61 @@
 
                     <!-- START CONTENT -->
                     <div class="row">
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="post-wrapper clearfix border-bottom">
-                                <div class="hotel-wrapper">
-                                    <div class="post-media">
-                                        <a href="hotel-single.php"><img src="upload/hotel_01.png" alt="" class="img-responsive"></a>
+<?php
+$go = $_POST['go'];
+$_SESSION['go_hotel'] = $go;
+//$go = 'Buea';
+//$budget = 20000;
+$in = $_POST['in_date'];
+$out = $_POST['out_date'];
+$budget = $_POST['budget'];
+$_SESSION['in'] = $in;
+$_SESSION['out'] = $out;
+
+require "connect.php";
+$h = "SELECT `hotel_id`, `name`, `image`, `desc`, `grade`, `price`, `town`, `type`, `location`, `grand-image` FROM `list_hotels` WHERE price <= '".$budget."' and town = '".$go."'";
+
+$list_hotels = mysql_query($h);
+
+while ($dis = mysql_fetch_assoc($list_hotels)) {
+    echo "
+                    <div class=\"col-md-4 col-sm-6 col-xs-12\">
+                            <div class=\"post-wrapper clearfix border-bottom\">
+                                <div class=\"hotel-wrapper\">
+                                    <div class=\"post-media\">
+                                        <a href=\"list_to_cat_hotel.php?hotel_id={$dis['hotel_id']}&&imgx={$dis['image']}&&name={$dis['name']}&&desc={$dis['desc']}&&grade={$dis['grade']}&&price={$dis['price']}&&location={$dis['location']}&&grand-image={$dis['grand-image']}\"><img src=\"{$dis['image']}\" alt=\"\" class=\"img-responsive\"></a>
                                     </div><!-- end media -->
-                                    <div class="post-title clearfix">
-                                        <div class="pull-left">
-                                            <h5><a href="hotel-single.php" title="">VALLE AURINA</a></h5>
+                                    <div class=\"post-title clearfix\">
+                                        <div class=\"\">
+                                            <h5><a href=\"list_to_cat_hotel.php?hotel_id={$dis['hotel_id']}&&imgx={$dis['image']}&&name={$dis['name']}&&desc={$dis['desc']}&&grade={$dis['grade']}&&price={$dis['price']}&&location={$dis['location']}&&grand-image{$dis['grand-image']}\" title=\"\">{$dis['name']}</a></h5>
                                         </div><!-- end left -->
-                                        <div class="pull-right">
-                                            <h6>$500</h6>
+                                        <div class=\"pull-right\">
+                                            <h6>{$dis['price']}&nbsp;Fcfa</h6>
                                         </div><!-- end left -->
                                     </div><!-- end title -->
-                                    <span class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
+                                    <span class=\"rating\">
+                                    ";
+                                    $i = 0;
+                             while ( $i < $dis['grade']) {
+                                            echo "
+                                                <i class='fa fa-star'></i>
+                                            ";
+                                            $i++;
+                                        }
+                                      
+                                    echo "    
                                     </span><!-- end rating -->
-                                    <p>Template based on deep research on the most popular travel booking websites such as booking.com, tripadvisor, yahoo travel, expedia..</p>
+                                    <p>{$dis['desc']}</p>
                                 </div><!-- end hotel-wrapper -->                            
                             </div><!-- end post-wrapper -->
                         </div><!-- end col -->
-
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="post-wrapper clearfix border-bottom">
-                                <div class="hotel-wrapper">
-                                    <div class="post-media">
-                                        <a href="hotel-single.php"><img src="upload/hotel_02.png" alt="" class="img-responsive"></a>
-                                    </div><!-- end media -->
-                                    <div class="post-title clearfix">
-                                        <div class="pull-left">
-                                            <h5><a href="hotel-single.php" title="">PRINCIPE FORTE DEI MARMI</a></h5>
-                                        </div><!-- end left -->
-                                        <div class="pull-right">
-                                            <h6>$225</h6>
-                                        </div><!-- end left -->
-                                    </div><!-- end title -->
-                                    <span class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span><!-- end rating -->
-                                    <p>Template based on deep research on the most popular travel booking websites such as booking.com, tripadvisor, yahoo travel, expedia..</p>
-                                </div><!-- end hotel-wrapper -->                            
-                            </div><!-- end post-wrapper -->
-                        </div><!-- end col -->
-
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="post-wrapper clearfix border-bottom">
-                                <div class="hotel-wrapper">
-                                    <div class="post-media">
-                                        <a href="hotel-single.php"><img src="upload/hotel_03.png" alt="" class="img-responsive"></a>
-                                    </div><!-- end media -->
-                                    <div class="post-title clearfix">
-                                        <div class="pull-left">
-                                            <h5><a href="hotel-single.php" title="">VOGLAUER QUADRO</a></h5>
-                                        </div><!-- end left -->
-                                        <div class="pull-right">
-                                            <h6>$225</h6>
-                                        </div><!-- end left -->
-                                    </div><!-- end title -->
-                                    <span class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span><!-- end rating -->
-                                    <p>Template based on deep research on the most popular travel booking websites such as booking.com, tripadvisor, yahoo travel, expedia..</p>
-                                </div><!-- end hotel-wrapper -->                            
-                            </div><!-- end post-wrapper -->
-                        </div><!-- end col -->
-
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="post-wrapper clearfix border-bottom">
-                                <div class="hotel-wrapper">
-                                    <div class="post-media">
-                                        <a href="hotel-single.php"><img src="upload/hotel_04.png" alt="" class="img-responsive"></a>
-                                    </div><!-- end media -->
-                                    <div class="post-title clearfix">
-                                        <div class="pull-left">
-                                            <h5><a href="hotel-single.php" title="">HOTEL DELUXE AURINA</a></h5>
-                                        </div><!-- end left -->
-                                        <div class="pull-right">
-                                            <h6>$980</h6>
-                                        </div><!-- end left -->
-                                    </div><!-- end title -->
-                                    <span class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span><!-- end rating -->
-                                    <p>Template based on deep research on the most popular travel booking websites such as booking.com, tripadvisor, yahoo travel, expedia..</p>
-                                </div><!-- end hotel-wrapper -->                            
-                            </div><!-- end post-wrapper -->
-                        </div><!-- end col -->
-
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="post-wrapper clearfix border-bottom">
-                                <div class="hotel-wrapper">
-                                    <div class="post-media">
-                                        <a href="hotel-single.php"><img src="upload/hotel_05.png" alt="" class="img-responsive"></a>
-                                    </div><!-- end media -->
-                                    <div class="post-title clearfix">
-                                        <div class="pull-left">
-                                            <h5><a href="hotel-single.php" title="">PRINCIPE HOTEL DA MITA</a></h5>
-                                        </div><!-- end left -->
-                                        <div class="pull-right">
-                                            <h6>$225</h6>
-                                        </div><!-- end left -->
-                                    </div><!-- end title -->
-                                    <span class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span><!-- end rating -->
-                                    <p>Template based on deep research on the most popular travel booking websites such as booking.com, tripadvisor, yahoo travel, expedia..</p>
-                                </div><!-- end hotel-wrapper -->                            
-                            </div><!-- end post-wrapper -->
-                        </div><!-- end col -->
-
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="post-wrapper clearfix border-bottom">
-                                <div class="hotel-wrapper">
-                                    <div class="post-media">
-                                        <a href="hotel-single.php"><img src="upload/hotel_06.png" alt="" class="img-responsive"></a>
-                                    </div><!-- end media -->
-                                    <div class="post-title clearfix">
-                                        <div class="pull-left">
-                                            <h5><a href="hotel-single.php" title="">SAMANDARO QUADRO</a></h5>
-                                        </div><!-- end left -->
-                                        <div class="pull-right">
-                                            <h6>$225</h6>
-                                        </div><!-- end left -->
-                                    </div><!-- end title -->
-                                    <span class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span><!-- end rating -->
-                                    <p>Template based on deep research on the most popular travel booking websites such as booking.com, tripadvisor, yahoo travel, expedia..</p>
-                                </div><!-- end hotel-wrapper -->                            
-                            </div><!-- end post-wrapper -->
-                        </div><!-- end col -->
-
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="post-wrapper clearfix border-bottom">
-                                <div class="hotel-wrapper">
-                                    <div class="post-media">
-                                        <a href="hotel-single.php"><img src="upload/hotel_07.png" alt="" class="img-responsive"></a>
-                                    </div><!-- end media -->
-                                    <div class="post-title clearfix">
-                                        <div class="pull-left">
-                                            <h5><a href="hotel-single.php" title="">HOTEL MAND AURINA</a></h5>
-                                        </div><!-- end left -->
-                                        <div class="pull-right">
-                                            <h6>$980</h6>
-                                        </div><!-- end left -->
-                                    </div><!-- end title -->
-                                    <span class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span><!-- end rating -->
-                                    <p>Template based on deep research on the most popular travel booking websites such as booking.com, tripadvisor, yahoo travel, expedia..</p>
-                                </div><!-- end hotel-wrapper -->                            
-                            </div><!-- end post-wrapper -->
-                        </div><!-- end col -->
-
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="post-wrapper clearfix border-bottom">
-                                <div class="hotel-wrapper">
-                                    <div class="post-media">
-                                        <a href="hotel-single.php"><img src="upload/hotel_08.png" alt="" class="img-responsive"></a>
-                                    </div><!-- end media -->
-                                    <div class="post-title clearfix">
-                                        <div class="pull-left">
-                                            <h5><a href="hotel-single.php" title="">PRINCE IPE HOTEL DA MITA</a></h5>
-                                        </div><!-- end left -->
-                                        <div class="pull-right">
-                                            <h6>$225</h6>
-                                        </div><!-- end left -->
-                                    </div><!-- end title -->
-                                    <span class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span><!-- end rating -->
-                                    <p>Template based on deep research on the most popular travel booking websites such as booking.com, tripadvisor, yahoo travel, expedia..</p>
-                                </div><!-- end hotel-wrapper -->                            
-                            </div><!-- end post-wrapper -->
-                        </div><!-- end col -->
-
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="post-wrapper clearfix border-bottom">
-                                <div class="hotel-wrapper">
-                                    <div class="post-media">
-                                        <a href="hotel-single.php"><img src="upload/hotel_09.png" alt="" class="img-responsive"></a>
-                                    </div><!-- end media -->
-                                    <div class="post-title clearfix">
-                                        <div class="pull-left">
-                                            <h5><a href="hotel-single.php" title="">BICH QUADRO</a></h5>
-                                        </div><!-- end left -->
-                                        <div class="pull-right">
-                                            <h6>$225</h6>
-                                        </div><!-- end left -->
-                                    </div><!-- end title -->
-                                    <span class="rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </span><!-- end rating -->
-                                    <p>Template based on deep research on the most popular travel booking websites such as booking.com, tripadvisor, yahoo travel, expedia..</p>
-                                </div><!-- end hotel-wrapper -->                            
-                            </div><!-- end post-wrapper -->
-                        </div><!-- end col -->
-
-                        <nav class="text-center">
-                            <ul class="pagination">
-                                <li>
-                                  <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                  </a>
-                                </li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                  <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                  </a>
-                                </li>
-                            </ul>
-                        </nav>
+        ";
+}
+$date1 = new DateTime($in);
+$date2 = new DateTime($out);
+$diff = date_diff($date1, $date2);
+echo $diff->d;
+?>
 
 
                     </div><!-- end row -->
@@ -363,3 +168,18 @@
 </body>
 
 </html>
+<!--
+down vote
+accepted
+I always advocate using the DateTime and DateInterval classes for this type of thing.
+
+$date1 = new DateTime($_POST['startdate']);
+$date2 = new DateTime($_POST['enddate']);
+
+/** @var DateInterval $diff */
+$diff = date_diff($date1, $date2);
+
+// You can look at the documentation for DateInterval,
+//  but suffice it to say that its member variable "d" refers to the "day" part of the difference
+echo $diff->d;
+-->
