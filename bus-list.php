@@ -60,7 +60,7 @@ session_start();
                 <div class="col-sm-12">
                     <ul class="c1 breadcrumb text-left">
                         <li><a href="/">Home</a></li>
-                        <li>Bus service</li>
+                        <li>Bus Ticket service</li>
                     </ul>
                     <h3>Bus Listing</h3>
                 </div>
@@ -82,13 +82,13 @@ $date = $_POST['date'];
 $_SESSION['date'] = $date;
 
 require "connect.php";
-$h = "SELECT `dest_id`, `trav_from`, `trav_to`, `price`, `grade`, `bus_agent` FROM `travel` WHERE trav_from = '".$from."' and trav_to = '".$to."'";
+$h = "SELECT `dest_id`, `trav_from`, `trav_to`, `price`, `grade`, `bus_agent`, `location`, `grand-image`, `image2`, `image3`, `image4` FROM `travel` WHERE trav_from = '".$from."' and trav_to = '".$to."'";
 
 $list_buses = mysql_query($h);
 
 while ($dis = mysql_fetch_assoc($list_buses)) {
     $id = $dis['bus_agent'];
-        $desc = "SELECT `agency_id`, `name`, `bus_desc`, `image` FROM `bus_agent` WHERE agency_id = '".$id."'";
+        $desc = "SELECT `agency_id`, `name`, `bus_desc`, `image`, `about` FROM `bus_agent` WHERE agency_id = '".$id."'";
             $result = mysql_query($desc);
     while ($agence = mysql_fetch_assoc($result)) {
         $_SESSION['agence_name'] = $agence['name'];
@@ -101,11 +101,11 @@ while ($dis = mysql_fetch_assoc($list_buses)) {
                             <div class=\"post-wrapper clearfix border-bottom\">
                                 <div class=\"hotel-wrapper\">
                                     <div class=\"post-media\">
-                                        <a href=\"bus-single.php?bus_id={$dis['dest_id']}\"><img src=\"{$_SESSION['agence_image']}\" alt=\"\" class=\"img-responsive\"></a>
+                                        <a href=\"list_to_cat_bus.php?date={$_SESSION['date']}&&bus_id={$dis['dest_id']}&&name={$_SESSION['agence_name']}&&desc={$_SESSION['agence_desc']}&&price={$dis['price']}&&grade={$dis['grade']}&&img1={$_SESSION['agence_image']}&&grandImage={$dis['grand-image']}&&img2={$dis['image2']}&&img3={$dis['image3']}&&img4={$dis['image4']}&&location={$dis['location']}&&about={$agence['about']}&&from={$dis['trav_from']}&&to={$dis['trav_to']}\"><img src=\"upload/{$_SESSION['agence_image']}\" alt=\"\" class=\"img-responsive\"></a>
                                     </div><!-- end media -->
                                     <div class=\"post-title clearfix\">
                                         <div class=\"\">
-                                            <h5><a href=\"bus-single.php?bus_id={$dis['dest_id']}\" title=\"\">{$_SESSION['agence_name']}</a></h5>
+                                            <h5><a href=\"list_to_cat_bus.php?date={$_SESSION['date']}&&bus_id={$dis['dest_id']}&&name={$_SESSION['agence_name']}&&desc={$_SESSION['agence_desc']}&&price={$dis['price']}&&grade={$dis['grade']}&&img1={$_SESSION['agence_image']}&&grandImage={$dis['grand-image']}&&img2={$dis['image2']}&&img3={$dis['image3']}&&img4={$dis['image4']}&&location={$dis['location']}&&about={$agence['about']}&&from={$dis['trav_from']}&&to={$dis['trav_to']}\" title=\"\">{$_SESSION['agence_name']}</a></h5>
                                         </div><!-- end left -->
                                         <div class=\"pull-right\">
                                             <h6>{$dis['price']}&nbsp;Fcfa</h6>

@@ -85,11 +85,16 @@
                     <!-- START CONTENT -->
                     <div class="single-hotel-wrapper">
                         <div class="single-hotel-image">
-                            <img src="<?php echo $_SESSION['grand']; ?>" alt="" class="img-responsive">
+                            <img src="/upload/<?php echo $_SESSION['grand']; ?>" alt="" class="img-responsive">
                             <div class="price">
                                 <h6><?php echo $_SESSION['name']; ?> 8.4</h6>
                                 <h2><small>FCFA</small><?php echo $_SESSION['price']; ?><span>/NIGHT</span></h2>
-                                <a href="#" class="btn btn-primary btn-lg">BOOK NOW</a>
+                                <?php 
+                                            $in = $_GET['in'];
+                                            $out = $_GET['out'];
+                                            $date1 = new DateTime($in); $date2 = new DateTime($out); $diff = date_diff($date1, $date2); $timeframe = $diff->d;
+                                echo "<a href='check-if-date-is-set-for-hotel.php?type={$_SESSION['type-of-room']}&&date={$timeframe}&&checkin={$_GET['in']}&&checkout={$_GET['out']}&&image={$_SESSION['img']}&&price={$_SESSION['price']}&&location={$_SESSION['location']}&&hotel-name={$_SESSION['name']}&&grade={$_SESSION['grade']}' class='btn btn-primary btn-lg'>BOOK NOW</a>"; 
+                                ?>
                             </div><!-- end price -->
 
                             <div class="thumbnails">
@@ -99,7 +104,7 @@
                                 $content_images = mysql_query($get_images);
                                     while ($row = mysql_fetch_assoc($content_images) ) {
                                         echo 
-                                            "<a data-gal=\"prettyPhoto[product-gallery]\" rel=\"bookmark\" title=\"\" href=\"{$row['Images']}\"><img src=\"{$row['Images']}\" alt=\"\" class=\"img-responsive\"></a>
+                                            "<a data-gal=\"prettyPhoto[product-gallery]\" rel=\"bookmark\" title=\"\" href=\"/upload/{$row['Images']}\"><img src=\"/upload/{$row['Images']}\" alt=\"\" class=\"img-responsive\"></a>
                                             ";
                                     }
                                 ?>
@@ -162,10 +167,10 @@
                                                 <h6>ROOM TYPES</h6>
                                             </div>
                                             <div class="col-sm-2">
-                                                <h6>PRICE</h6>
+                                                <h6>PRICE (Fcfa)</h6>
                                             </div>
                                             <div class="col-sm-2">
-                                                <h6>NO.ROOMS</h6>
+                                                
                                             </div>
                                             <div class="col-sm-3">
                                                 <h6>ACTION</h6>
@@ -175,37 +180,33 @@
                                         <div class="clearfix"></div>
 
                                             <?php
+                                            $in = $_GET['in'];
+                                            $out = $_GET['out'];
+                                            $date1 = new DateTime($in); $date2 = new DateTime($out); $diff = date_diff($date1, $date2); $timeframe = $diff->d;
                                                 require "connect.php";
                                                 $get_images = "SELECT `Hotel-Image-Id`, `Hotel-id`, `Images`, `Type`, `Hotel-Desc`, `Price` FROM `hotel-images` WHERE `Hotel-id` = '".$_SESSION['hotel_id']."'";
                                                 $content_images = mysql_query($get_images);
                                                 while ($row = mysql_fetch_assoc($content_images) ) {
                                                     echo "
-                                                        <div class=\"row\">
-                                                            <div class=\"col-sm-5\">
-                                                                <img src=\"{$row['Images']}\" alt=\"\" class=\"img-responsive alignleft\">
-                                                                <p>{$row['Type']}</p>
-                                                                <p class=\"lead\">{$row['Hotel-Desc']}</p>
-                                                            </div>
-                                                            <div class=\"col-sm-2 list-style-hotel\">
-                                                                <h5>FCFA{$row['Price']}<span>/NIGHT</span></h5>
-                                                            </div>
-                                                            <div class=\"col-sm-2 list-style-hotel\">
-                                                                <div class=\"dropdown selectmini\">
-                                                                <!--
-                                                                    <select class=\"selectpicker\" data-style=\"btn-white\">
-                                                                        <option>1</option>
-                                                                        <option>2</option>
-                                                                        <option>3</option>
-                                                                    </select>
-                                                                -->
+                                                        <div class='row'>
+                                                            <div class='col-sm-7'>
+                                                                <div class='col-sm-8'>
+                                                                <img src='/upload/{$row['Images']}' alt='' class='img-responsive alignleft'>
+                                                                </div>
+                                                                <div class='col-sm-4'>
+                                                                <p style=''>{$row['Type']}</p>
+                                                                <p class='lead'>{$row['Hotel-Desc']}</p>
                                                                 </div>
                                                             </div>
-                                                            <div class=\"col-sm-3 list-style-hotel\">
-                                                                <a href=\"#\" class=\"btn btn-primary btn-normal border-radius\">BOOK NOW</a>
+                                                            <div class='col-sm-2 list-style-hotel'>
+                                                                <h5>{$row['Price']}<span>/NIGHT</span></h5>
+                                                            </div>
+                                                            <div class='col-sm-3 list-style-hotel'>
+                                                                <a href='check-if-date-is-set-for-hotel.php?type={$row['Type']}&&date={$timeframe}&&checkin={$_GET['in']}&&checkout={$_GET['out']}&&image={$row['Images']}&&price={$row['Price']}&&location={$_SESSION['location']}&&hotel-name={$_SESSION['name']}&&grade={$_SESSION['grade']}' class='btn btn-primary btn-normal border-radius'>BOOK NOW</a>
                                                             </div>
                                                         </div>
 
-                                                        <div class=\"clearfix\"></div>
+                                                        <div class='clearfix'></div>
                                                         <hr>
                                                     ";
                                                 }
@@ -246,7 +247,7 @@
 
                                     <div class="row hotel-desc">
                                         <div class="col-md-12">
-                                            <h5>ABOUT THE HOTEL</h5>
+                                            <h5>ABOUT THIS HOTEL</h5>
                                             <p><?php echo $_SESSION['about']; ?></p>
                                         </div><!-- end col -->
                                     </div><!-- end hote-desc -->
@@ -257,7 +258,7 @@
                                 <br>
 
                                 <div class="leave-a-feedback text-center clearfix">
-                                    <h6>FOR ANY ENQUIRY PLEASE DO <a href="contact.php">CONTACT US</a> WE SHALL GET BACK TO YOU IN LESS THAN 24Hrs</h6>
+                                    <h6>FOR ANY ENQUIRY PLEASE DO <a href="contact.php" target="_blank">CONTACT US</a> WE SHALL GET BACK TO YOU IN LESS THAN 24Hrs</h6>
                                 </div><!-- end leave-a-feedback -->
 
                             </div><!-- end content -->
@@ -270,7 +271,6 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </section><!-- end section -->
-
     <!--Footer goes here-->
         <?php include"footer1.php" ?>
     <!--End of Footer-->

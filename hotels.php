@@ -83,8 +83,15 @@ $_SESSION['go_hotel'] = $go;
 $in = $_POST['in_date'];
 $out = $_POST['out_date'];
 $budget = $_POST['budget'];
-$_SESSION['in'] = $in;
-$_SESSION['out'] = $out;
+
+$date1 = new DateTime($in);
+$date2 = new DateTime($out);
+
+
+//$diff = date_diff($date1, $date2);
+//echo $diff->d;
+
+//$_SESSION['book-date-for-hotel'] = $diff->d;
 
 require "connect.php";
 $h = "SELECT `hotel_id`, `name`, `image`, `desc`, `grade`, `price`, `town`, `type`, `location`, `grand-image` FROM `list_hotels` WHERE price <= '".$budget."' and town = '".$go."'";
@@ -97,11 +104,11 @@ while ($dis = mysql_fetch_assoc($list_hotels)) {
                             <div class=\"post-wrapper clearfix border-bottom\">
                                 <div class=\"hotel-wrapper\">
                                     <div class=\"post-media\">
-                                        <a href=\"list_to_cat_hotel.php?hotel_id={$dis['hotel_id']}&&imgx={$dis['image']}&&name={$dis['name']}&&desc={$dis['desc']}&&grade={$dis['grade']}&&price={$dis['price']}&&location={$dis['location']}&&grand-image={$dis['grand-image']}\"><img src=\"{$dis['image']}\" alt=\"\" class=\"img-responsive\"></a>
+                                        <a href=\"list_to_cat_hotel.php?hotel_id={$dis['hotel_id']}&&imgx={$dis['image']}&&name={$dis['name']}&&desc={$dis['desc']}&&grade={$dis['grade']}&&price={$dis['price']}&&type={$dis['type']}&&location={$dis['location']}&&grand-image={$dis['grand-image']}&&date-in={$in}&&date-out={$out}\"><img src=\"/upload/{$dis['image']}\" alt=\"\" class=\"img-responsive\"></a>
                                     </div><!-- end media -->
                                     <div class=\"post-title clearfix\">
                                         <div class=\"\">
-                                            <h5><a href=\"list_to_cat_hotel.php?hotel_id={$dis['hotel_id']}&&imgx={$dis['image']}&&name={$dis['name']}&&desc={$dis['desc']}&&grade={$dis['grade']}&&price={$dis['price']}&&location={$dis['location']}&&grand-image{$dis['grand-image']}\" title=\"\">{$dis['name']}</a></h5>
+                                            <h5><a href=\"list_to_cat_hotel.php?hotel_id={$dis['hotel_id']}&&imgx={$dis['image']}&&name={$dis['name']}&&desc={$dis['desc']}&&grade={$dis['grade']}&&price={$dis['price']}&&type={$dis['type']}&&location={$dis['location']}&&grand-image={$dis['grand-image']}&&date-in={$in}&&date-out={$out}\" title=\"\">{$dis['name']}</a></h5>
                                         </div><!-- end left -->
                                         <div class=\"pull-right\">
                                             <h6>{$dis['price']}&nbsp;Fcfa</h6>
@@ -125,10 +132,9 @@ while ($dis = mysql_fetch_assoc($list_hotels)) {
                         </div><!-- end col -->
         ";
 }
-$date1 = new DateTime($in);
-$date2 = new DateTime($out);
-$diff = date_diff($date1, $date2);
-echo $diff->d;
+/*echo $_SESSION['out']."<br>";
+echo $_SESSION['in'];
+*/
 ?>
 
 

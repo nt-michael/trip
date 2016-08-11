@@ -60,7 +60,7 @@ session_start();
                 <div class="col-sm-12">
                     <ul class="c1 breadcrumb text-left">
                         <li><a href="/">Home</a></li>
-                        <li>Car rental</li>
+                        <li>Car Rental</li>
                     </ul>
                     <h3>Car Listing</h3>
                 </div>
@@ -79,13 +79,13 @@ session_start();
 $city = $_POST['city'];
 //$go = 'Buea';
 //$budget = 20000;
-$in = $_POST['in_date'];
-$out = $_POST['out_date'];
+$in = $_POST['in'];
+$out = $_POST['out'];
 $_SESSION['in'] = $in;
 $_SESSION['out'] = $out;
-
+$date1 = new DateTime($in); $date2 = new DateTime($out); $diff = date_diff($date1, $date2); $_SESSION['days'] = $diff->d;
 require "connect.php";
-$car = "SELECT `car_id`, `car_mark`, `car_desc`, `car_img`, `car_faire`, `city`, `grade` FROM `car` WHERE city = '".$city."'";
+$car = "SELECT `car_id`, `agency_name`, `location`, `about`, `car_mark`, `car_desc`, `car_faire`, `city`, `grade`, `car_img`, `image2`, `image3`, `image4`, `grand-image` FROM `car` WHERE city = '".$city."'";
 
 $list_cars = mysql_query($car);
 
@@ -95,7 +95,7 @@ while ($dis = mysql_fetch_assoc($list_cars)) {
                             <div class=\"post-wrapper clearfix border-bottom\">
                                 <div class=\"hotel-wrapper\">
                                     <div class=\"post-media\">
-                                        <a href=\"car-single.php?car_id={$dis['car_id']}\"><img src=\"{$dis['car_img']}\" alt=\"\" class=\"img-responsive\"></a>
+                                        <a href=\"list_to_cat_car.php?car-id={$dis['car_id']}&&date-in={$_SESSION['in']}&&date-out={$_SESSION['out']}&&days={$_SESSION['days']}&&agence={$dis['agency_name']}&&location={$dis['location']}&&mark={$dis['car_mark']}&&desc={$dis['car_desc']}&&fair={$dis['car_faire']}&&grade={$dis['grade']}&&img1={$dis['car_img']}&&img2={$dis['image2']}&&img3={$dis['image3']}&&img4={$dis['image4']}&&grand={$dis['grand-image']}\"><img src=\"upload/{$dis['car_img']}\" alt=\"\" class=\"img-responsive\"></a>
                                     </div><!-- end media -->
                                     <div class=\"post-title clearfix\">
                                         <div class=\"\">
@@ -123,7 +123,6 @@ while ($dis = mysql_fetch_assoc($list_cars)) {
                         </div><!-- end col -->
         ";
 }
-
 ?>
 
 

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -74,7 +77,7 @@
                     <div class="row">
 <?php
 require "connect.php";
-$h = "SELECT `hotel_id`, `name`, `image`, `desc`, `grade`, `price`, `town` FROM `list_hotels` WHERE 1";
+$h = "SELECT `hotel_id`, `name`, `image`, `desc`, `grade`, `price`, `town`, `type`, `location`, `grand-image` FROM `list_hotels` WHERE 1";
 
 $list_hotels = mysql_query($h);
 
@@ -84,11 +87,11 @@ while ($dis = mysql_fetch_assoc($list_hotels)) {
                             <div class=\"post-wrapper clearfix border-bottom\">
                                 <div class=\"hotel-wrapper\">
                                     <div class=\"post-media\">
-                                        <a href=\"hotel-single.php?hotel_id={$dis['hotel_id']}\"><img src=\"{$dis['image']}\" alt=\"\" class=\"img-responsive\"></a>
+                                        <a href=\"list_to_cat_hotel.php?hotel_id={$dis['hotel_id']}&&imgx={$dis['image']}&&name={$dis['name']}&&desc={$dis['desc']}&&grade={$dis['grade']}&&price={$dis['price']}&&type={$dis['type']}&&location={$dis['location']}&&grand-image={$dis['grand-image']}\"><img src=\"/upload/{$dis['image']}\" alt=\"\" class=\"img-responsive\"></a>
                                     </div><!-- end media -->
                                     <div class=\"post-title clearfix\">
                                         <div class=\"\">
-                                            <h5><a href=\"hotel-single.php?hotel_id={$dis['hotel_id']}\" title=\"\">{$dis['name']}</a></h5>
+                                            <h5><a href=\"list_to_cat_hotel.php?hotel_id={$dis['hotel_id']}&&imgx={$dis['image']}&&name={$dis['name']}&&desc={$dis['desc']}&&grade={$dis['grade']}&&price={$dis['price']}&&type={$dis['type']}&&location={$dis['location']}&&grand-image={$dis['grand-image']}\" title=\"\">{$dis['name']}</a></h5>
                                         </div><!-- end left -->
                                         <div class=\"pull-right\">
                                             <h6>{$dis['price']}&nbsp;Fcfa</h6>

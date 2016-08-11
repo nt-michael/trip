@@ -21,17 +21,6 @@
                                                     <div class="row">
                                                         <article class="col-md-6">
                                                             <ul>
-                                                                <li><h3>HOME PAGES</h3></li>
-                                                                <li><a href="index-2.php">Home Default</a></li>
-                                                                <li><a href="index1.php">Home Version 1</a></li>
-                                                                <li><a href="index2.php">Home Version 2</a></li>
-                                                                <li><a href="index3.php">Home Version 3</a></li>
-                                                                <li><a href="index4.php">Home Version 4</a></li>
-                                                                <li><a href="index5.php">Home Version 5</a></li>
-                                                            </ul>
-                                                        </article>
-                                                        <article class="col-md-6">
-                                                            <ul>
                                                                 <li><h3>CUSTOM PAGES</h3></li>
                                                                 <li><a href="hotel-list.php">Hotels</a></li>
                                                                 <li><a href="hotel-single.php">Hotels Single</a></li>
